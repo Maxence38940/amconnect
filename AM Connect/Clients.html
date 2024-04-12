@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link rel="stylesheet" href="Style 2.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AM Connect CRM/Client</title>
+  <link rel="icon" href="Images/Logo/Logo 1.png" type="image/x-icon">
+</head>
+
+<body>
+  <header class="header">
+      <a class="Logo" href="Acceuil.html"><img src="Images/Logo/Logo 1.png" alt="Logo de l'interface" width="150"></a>
+      <style>
+        .Logo{
+          position: absolute; /* ou relative selon vos besoins */
+          top: 15px; /* position verticale par rapport au haut */
+          left: 15px; /* position horizontale par rapport à la gauche */
+        }
+      </style>
+      <div class="buttons">
+        <a href="Page de connexion.html"><button>SE CONNECTER</button></a>
+        <a href="Page de connexion.html"><button>S'INSCRIRE</button></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./Clients.html">Clients</a></li>
+          <li><a href="./Factures.html">Facture</a></li>
+          <li><a href="./Rapports.html">Rapports</a></li>
+          <li><a href="./Activités.html">Activité</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <section class="content">
+    <div class="container">
+      <img src="https://www.trans-natural.com/wp-content/uploads/sites/274/2020/01/2020-logo-vague_transnatural-orig.png" alt="Logo TransNatural" width="300">
+    </div>
+  </section>
+
+  <section class="content" id="clients">
+    <h2>Clients</h2>
+    <div class="marge" >
+    <p>Vous vous trouvez dans l'interface client. Elle permet de gérer les informations administratives des clients.</p>
+  </div>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tableau en nuances de gris</title>
+        <style>
+            
+            table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 2px solid #616060; /* Couleur du contour du tableau */
+            }
+            th, td {
+                border: 0px solid #ffffff;
+                padding: 8px;
+                text-align: left;
+            }
+            th {
+                background-color: #616060;
+                color: #fff;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2; /* Utilisation d'une nuance de gris clair pour les lignes paires */
+            }
+            tr:nth-child(odd) {
+                background-color: #e0e0e0; /* Utilisation d'une nuance de gris plus foncé pour les lignes impaires */
+            }
+            .marge {
+              margin-bottom: 5%;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <table>
+        <thead>
+            <tr>
+              <th></th>  
+              <th>Entreprise:</th>
+                <th>Adresse:</th>
+                <th>Responsable:</th>
+                <th>Contact mail:</th>
+                <th>Téléphone:</th>
+                <th>Numéro SIRET:</th>
+                <th>Numéro TVA Intracommunautaire:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+              <td><h3>Client 1</h3></td>
+                <td>Entreprise A</td>
+                <td>Adresse A</td>
+                <td>Responsable A</td>
+                <td>contact@entrepriseA.com</td>
+                <td>1234567890</td>
+                <td>12345678901234</td>
+                <td>FR12345678901</td>
+                <td>
+                  <button class="btn">Modifier</button>
+                  <button class="btn">Consulter l'historique</button></td>
+            </tr>
+            <tr>
+              <td><h3>Client 2</h3></td>
+              <td>Entreprise B</td>
+              <td>Adresse B</td>
+              <td>Responsable B</td>
+              <td>contact@entrepriseB.com</td>
+              <td>9876543210</td>
+              <td>98765432109876</td>
+              <td>FR98765432109</td>
+              <td>
+                <button class="btn">Modifier</button>
+                <button class="btn">Consulter l'historique</button></td>
+          </tr>
+        </tbody>
+    </table>
+  
+   
+    
+  <footer class="footer">
+    <div class="containerfooter">
+      <p>&copy; AM Connect 2024</p>
+      <a href="#">Conditions Générales d'Utilisation</a>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,246 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+}
+
+.header nav ul {
+  list-style: none;
+}
+
+.header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif; /* Ajout de la typographie */
+  font-weight: bold; /* Ajout de la typographie */
+}
+
+.header nav ul li a:hover {
+  text-decoration: underline; /* Ajout de la surbrillance */
+}
+
+.buttons {
+  left: 200;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons button {
+  left: 100;
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 80%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif; /* Ajout de la typographie */
+  font-weight: bold; /* Ajout de la typographie */
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.content {
+  padding: 50px 0;
+  text-align: center;
+  margin-top: 0%;
+  margin-bottom: 10%;
+}
+
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Styles modernes */
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: #f2f2f2;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header nav ul {
+  list-style-type: none;
+}
+
+.header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.header nav ul li a:hover {
+  color: #61A90E;
+}
+
+.buttons button {
+  background-color: #61A90E;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+  background-color: #61A90E;
+}
+
+
+.header img {
+  display: block;
+  margin: 0 auto;
+}
+
+.header nav ul {
+  list-style: none;
+}
+
+.header nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-left: 9%;
+}
+
+.buttons button {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+.buttons button:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.content {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.content img {
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* MOI */
+
+.header {
+  padding: 65px;
+  background-color: #333;
+  color: #fff;
+}
+
+.marge {
+margin-bottom:0%;
+}
+
+/* Styles de base du bouton */
+.btn {
+  background-color: #4CAF50; /* Couleur de fond */
+  border: none; /* Pas de bordure */
+  color: white; /* Couleur du texte */
+  padding: 15px 32px; /* Espacement du texte à l'intérieur du bouton */
+  text-align: center; /* Alignement du texte */
+  text-decoration: none; /* Pas de soulignement */
+  display: inline-block; /* Afficher comme un élément en ligne */
+  font-size: 16px; /* Taille de la police */
+  margin: 2px 2px; /* Marge autour du bouton */
+  cursor: pointer; /* Curseur pointeur */
+  border-radius: 8px; /* Rayon de la bordure */
+  transition: all 0.3s ease;
+}
+
+/* Style lorsque le bouton est survolé */
+.btn:hover {
+  background-color: #333; /* Nouvelle couleur de fond */
+}
+
+.footer {
+  margin-top: 10%;
+  background-color: #333;
+  display: flex;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: relative; /* Fixe le pied de page en bas de la fenêtre */
+  bottom: 0;
+  width: 100%; /* Prendre toute la largeur de la page */
+}
+.containerfooter{
+  margin: 0 auto; /* Marge automatique horizontale */
+  width: 10%/* largeur de votre élément */;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #61A90E;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.LogoTN {
+  justify-content: center;
+  text-align: center;
+  margin-top: 5%;
+  padding: 0 25px;
+}

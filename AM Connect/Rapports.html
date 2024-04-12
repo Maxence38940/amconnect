@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link rel="stylesheet" href="Style 4.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AM Connect CRM/Rapports</title>
+  <link rel="icon" href="Images/Logo/Logo 1.png" type="image/x-icon">
+</head>
+
+<body>
+  <header class="header">
+      <a class="Logo" href="Acceuil.html"><img src="Images/Logo/Logo 1.png" alt="Logo de l'interface" width="150"></a>
+      <style>
+        .Logo{
+          position: absolute; /* ou relative selon vos besoins */
+          top: 15px; /* position verticale par rapport au haut */
+          left: 15px; /* position horizontale par rapport à la gauche */
+        }
+      </style>
+      <div class="buttons">
+        <a href="Page de connexion.html"><button>SE CONNECTER</button></a>
+        <a href="Page de connexion.html"><button>S'INSCRIRE</button></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./Clients.html">Clients</a></li>
+          <li><a href="./Factures.html">Facture</a></li>
+          <li><a href="./Rapports.html">Rapports</a></li>
+          <li><a href="./Activités.html">Activité</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <section class="LogoTN">
+    <div class="LogoTN">
+      <img src="https://www.trans-natural.com/wp-content/uploads/sites/274/2020/01/2020-logo-vague_transnatural-orig.png" alt="Logo TransNatural" width="300">
+    </div>
+  </section>
+
+
+    </div>
+    <div class="content" id="reports">
+      <h2>Rapports</h2>
+      <button class="btn">Statistiques</button>
+      <p>Ceci est l'interface des rapports. Elle fournit des rapports détaillés et des analyses.</p>
+      
+
+ 
+<style>
+  /* Style pour le graphique en courbe */
+  .graph-container {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  .graph {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  .line {
+    fill: none;
+    stroke-width: 2;
+    transition: stroke-width 0.3s; /* Animation pour l'épaisseur de la ligne */
+  }
+  .line:hover {
+    stroke-width: 4; /* Épaisseur de la ligne lorsqu'elle est survolée */
+  }
+  .client1 { stroke: blue; }
+  .client2 { stroke: red; }
+  .client3 { stroke: green; }
+  .client4 { stroke: orange; }
+  .detail-box {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+  <div class="graph-container">
+    <svg class="graph" viewBox="0 0 600 400">
+      <!-- Lignes de l'axe X -->
+      <line x1="50" y1="350" x2="550" y2="350" stroke="#000" />
+      <!-- Lignes de l'axe Y -->
+      <line x1="50" y1="50" x2="50" y2="350" stroke="#000" />
+      <!-- Marques sur l'axe X -->
+      <text x="50" y="370">Jan</text>
+      <text x="150" y="370">Fev</text>
+      <text x="250" y="370">Mar</text>
+      <text x="350" y="370">Avr</text>
+      <text x="450" y="370">Mai</text>
+      <text x="550" y="370">Juin</text>
+      <!-- Marques sur l'axe Y -->
+    <text x="0" y="50">1000€</text>
+    <text x="0" y="150">750€</text>
+    <text x="0" y="250">350€</text>
+    <text x="0" y="350">0€</text>
+    
+    <!-- Lignes pour chaque client -->
+    <path class="line client1" d="M50,350 L150,200 L250,250 L350,300 L450,250 L550,350" data-details="Desjoyaux Piscines: Janv: 200€, Fév: 500€, Mars: 400€, Avr: 700€, Mai: 540€, Juin: 810€" />
+    <path class="line client2" d="M50,350 L150,250 L250,200 L350,150 L450,250 L550,350" data-details="Sofatec: Janv: 300€, Fév: 400€, Mars: 600€, Avr: 800€, Mai: 700€, Juin: 1000€" />
+    <path class="line client3" d="M50,350 L150,300 L250,350 L350,200 L450,250 L550,350" data-details="Pradier Bois Energie: Janv: 400€, Fév: 300€, Mars: 500€, Avr: 900€, Mai: 800€, Juin: 1200€" />
+    <path class="line client4" d="M50,350 L150,150 L250,250 L350,300 L450,350 L550,200" data-details="All Solution: Janv: 500€, Fév: 200€, Mars: 700€, Avr: 1000€, Mai: 400€, Juin: 1100€" />
+
+    </svg>
+  </div>
+
+<div class="detail-box" id="detailBox"></div>
+
+<script>
+  const detailBox = document.getElementById('detailBox');
+  const lines = document.querySelectorAll('.line');
+
+  lines.forEach(line => {
+    line.addEventListener('mouseover', () => {
+      const details = line.getAttribute('data-details');
+      detailBox.innerHTML = details;
+      detailBox.style.display = 'block';
+    });
+
+    line.addEventListener('mouseout', () => {
+      detailBox.style.display = 'none';
+    });
+
+    line.addEventListener('mousemove', (event) => {
+      detailBox.style.left = event.pageX + 'px';
+      detailBox.style.top = event.pageY + 'px';
+    });
+  });
+</script>
+      </body>
+        </table>
+
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Graphique d'activité par client</title>
+          <!-- Inclure Chart.js -->
+          <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        </head>
+  
+        <body>
+          <div class="Chart">
+            <canvas id="myChart"></canvas>
+          </div>
+  
+          <script>
+            // Données de l'exemple
+            var clients = ["Desjoyaux Piscines", "Sofatec", "Pradier Bois Energie", "All Solution"];
+            var activites = [50, 30, 20, 40]; // Exemple de données d'activité par client
+  
+            // Créer un contexte de dessin pour le graphique
+            var ctx = document.getElementById('myChart').getContext('2d');
+  
+            // Créer le graphique
+            var myChart = new Chart(ctx, {
+              type: 'bar', // Type de graphique (barre)
+              data: {
+                labels: clients, // Noms des clients
+                datasets: [{
+                  label: 'Activité par client', // Légende du graphique
+                  data: activites, // Données d'activité
+                  backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)', // Couleur de fond pour chaque barre
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)'
+                  ],
+                  borderColor: [
+                    'rgba(255, 99, 132, 1)', // Couleur de bordure pour chaque barre
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)'
+                  ],
+                  borderWidth: 1 // Largeur de la bordure
+                }]
+              },
+              options: {
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      beginAtZero: true // Commencer l'axe y à zéro
+                    }
+                  }]
+                }
+              }
+            });
+          </script>
+        <footer class="footer">
+          <div class="containerfooter">
+            <p>&copy; AM Connect 2024</p>
+            <a href="#">Conditions Générales d'Utilisation</a>
+          </div>
+        </footer>
+        </body>
+     
+ 
+</body>
+
+</html>

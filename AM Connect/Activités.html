@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link rel="stylesheet" href="Style 4.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AM Connect CRM/Activités</title>
+  <link rel="icon" href="Images/Logo/Logo 1.png" type="image/x-icon">
+</head>
+
+<body>
+  <header class="header">
+      <a class="Logo" href="Acceuil.html"><img src="Images/Logo/Logo 1.png" alt="Logo de l'interface" width="150"></a>
+      <style>
+        .Logo{
+          position: absolute; /* ou relative selon vos besoins */
+          top: 15px; /* position verticale par rapport au haut */
+          left: 15px; /* position horizontale par rapport à la gauche */
+        }
+      </style>
+      <div class="buttons">
+        <a href="Page de connexion.html"><button>SE CONNECTER</button></a>
+        <a href="Page de connexion.html"><button>S'INSCRIRE</button></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./Clients.html">Clients</a></li>
+          <li><a href="./Factures.html">Facture</a></li>
+          <li><a href="./Rapports.html">Rapports</a></li>
+          <li><a href="./Activités.html">Activité</a></li>
+        </ul>
+      </nav>
+  </header>
+
+
+  <section class="LogoTN">
+    <div class="LogoTN">
+      <img src="https://www.trans-natural.com/wp-content/uploads/sites/274/2020/01/2020-logo-vague_transnatural-orig.png" alt="Logo TransNatural" width="300">
+    </div>
+  </section>
+  
+    </div>
+    <div class="content" id="activities">
+      <h2>Activité</h2>
+      <button class="btn">Générer un devis</button>
+      <button class="btn">Importer une tarification</button>
+      <p>Ici, créer vos propres offres ou stockez vos tarification pour une classification détaillée de vos offres</p>
+      <!DOCTYPE html>
+      <html lang="fr">
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Historique client</title>
+        
+      </head>
+
+      <body>
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Tableau en nuances de gris</title>
+          <style>
+              
+              table {
+              border-collapse: collapse;
+              width: 100%;
+              border: 2px solid #616060; /* Couleur du contour du tableau */
+              }
+              th, td {
+                  border: 0px solid #ffffff;
+                  padding: 8px;
+                  text-align: left;
+              }
+              th {
+                  background-color: #616060;
+                  color: #fff;
+              }
+              tr:nth-child(even) {
+                  background-color: #f2f2f2; /* Utilisation d'une nuance de gris clair pour les lignes paires */
+              }
+              tr:nth-child(odd) {
+                  background-color: #e0e0e0; /* Utilisation d'une nuance de gris plus foncé pour les lignes impaires */
+              }
+              .marge {
+                margin-bottom: 5%;
+              }
+          </style>
+      </head>
+        <h2>Historique client</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Entreprise</th>
+              <th>Nom du responsable</th>
+              <th>Contact mail</th>
+              <th>Téléphone</th>
+              <th>Offres en cours</th>
+              <th>Offres passées</th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Entreprise A</td>
+              <td>Responsable A</td>
+              <td>contact@entrepriseA.com</td>
+              <td>1234567890</td>
+              <td>3</td>
+              <td>7</td>
+              <td>
+                <button class="btn">Voir</button>
+            </tr>
+            <tr>
+              <td>Entreprise B</td>
+              <td>Responsable B</td>
+              <td>contact@entrepriseB.com</td>
+              <td>9876543210</td>
+              <td>5</td>
+              <td>12</td>
+              <td>
+              <button class="btn">Voir</button>
+            </tr>
+          </tbody>
+        </table>
+        <footer class="footer">
+          <div class="containerfooter">
+            <p>&copy; AM Connect 2024</p>
+            <a href="#">Conditions Générales d'Utilisation</a>
+          </div>
+        </footer>
+        </body>
+      </body>
+
+      </html>
+    </div>
+  </div>
+  <script>
+    const menuLinks = document.querySelectorAll('.menu a');
+    const contents = document.querySelectorAll('.content');
+
+    menuLinks.forEach((link, index) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        showContent(index);
+      });
+    });
+
+    function showContent(index) {
+      contents.forEach(content => {
+        content.classList.remove('active');
+      });
+      contents[index].classList.add('active');
+    }
+  </script>
+ 
+
+ 
+</body>
+
+</html>

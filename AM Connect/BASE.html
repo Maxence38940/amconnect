@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AM Connect CRM/Profil utilisateur</title>
+
+</head>
+
+<body>
+  <div class="container">
+    <img src="./Images/Logo/Logo 1.png" alt="Logo" class="logo" width=200>
+    <h1>Société TransNatural</h1>
+    <img src="https://www.trans-natural.com/wp-content/uploads/sites/274/2020/01/2020-logo-vague_transnatural-orig.png"
+      width=250>
+    <button> SE CONNECTER </button>
+    <button> S'INSCRIRE </button>
+    <p>Bienvenue "utilisateur" sur l'interface CRM de TransNatural, ici pilotez en toute simplicité votre performance et
+      suivez vos clients et votre activité </p>
+    <div class="menu">
+      <a href="#clients">Clients</a>
+      <a href="#invoices">Factures</a>
+      <a href="#reports">Rapports</a>
+      <a href="#activities">Activité</a>
+    </div>
+    <div class="content" id="clients">
+      <h2>Clients</h2>
+      <p>Vous vous trouvez dans l'interface client. Elle permet de gérer les informations administrative des clients
+      </p>
+      <!DOCTYPE html>
+      <html lang="fr">
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Informations sur les clients</title>
+       
+      </head>
+
+      <body>
+
+        <div class="client">
+          <h3>Client 1</h3>
+          <p><strong>Entreprise:</strong> Entreprise A</p>
+          <p><strong>Adresse:</strong> Adresse A</p>
+          <p><strong>Responsable:</strong> Responsable A</p>
+          <p><strong>Contact mail:</strong> contact@entrepriseA.com</p>
+          <p><strong>Téléphone:</strong> 1234567890</p>
+          <p><strong>Numéro SIRET:</strong> 12345678901234</p>
+          <p><strong>Numéro TVA Intracommunautaire:</strong> FR12345678901</p>
+          <button class="btn">Modifier</button>
+          <button class="btn">Consulter l'historique</button>
+        </div>
+
+        <div class="client">
+          <h3>Client 2</h3>
+          <p><strong>Entreprise:</strong> Entreprise B</p>
+          <p><strong>Adresse:</strong> Adresse B</p>
+          <p><strong>Responsable:</strong> Responsable B</p>
+          <p><strong>Contact mail:</strong> contact@entrepriseB.com</p>
+          <p><strong>Téléphone:</strong> 9876543210</p>
+          <p><strong>Numéro SIRET:</strong> 98765432109876</p>
+          <p><strong>Numéro TVA Intracommunautaire:</strong> FR98765432109</p>
+          <button class="btn">Modifier</button>
+          <button class="btn">Consulter l'historique</button>
+        </div>
+      </body>
+
+      </html>
+    </div>
+    <div class="content" id="invoices">
+      <h2>Factures</h2>
+      <p>Gérez vos factures par le biai des interfaces ci-dessous</p>
+      <!DOCTYPE html>
+      <html lang="fr">
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Générateur de factures</title>
+        
+      </head>
+
+      <body>
+
+        <div class="container">
+          <h2>Générateur de factures</h2>
+          <button class="btn" id="generateInvoiceBtn">Générer une facture</button>
+
+          <!-- Liste des factures précédentes -->
+          <h3>Liste des factures précédentes</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Numéro de facture</th>
+                <th>Nom de l'entreprise</th>
+                <th>Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="invoiceList">
+              <!-- Les factures précédentes seront ajoutées ici dynamiquement -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Page d'interface pour générer une facture -->
+        <div id="invoicePage" class="page">
+          <div class="container">
+            <h2>Générer une facture</h2>
+            <div>
+              <!-- Formulaire pour saisir les détails de l'affaire -->
+              <h3>Détails de l'affaire</h3>
+              <input type="text" placeholder="Nom de l'affaire"><br><br>
+              <!-- Bloc pour choisir un client préenregistré -->
+              <h3>Choisir un client</h3>
+              <select id="clientSelect">
+                <!-- Les options seront ajoutées ici dynamiquement -->
+              </select><br><br>
+              <button class="btn" id="generateBtn">Générer la facture</button>
+              <button class="btn" id="cancelBtn">Annuler</button>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          // Fonction pour afficher la page d'interface de génération de facture
+          function showInvoicePage() {
+            document.getElementById("invoicePage").classList.add("show");
+            populateClientDropdown(); // Remplir la liste déroulante des clients
+          }
+
+          // Fonction pour remplir la liste déroulante des clients
+          function populateClientDropdown() {
+            var clients = ["Client 1", "Client 2", "Client 3"]; // Exemple de clients
+            var select = document.getElementById("clientSelect");
+
+            clients.forEach(function (client) {
+              var option = document.createElement("option");
+              option.text = client;
+              select.add(option);
+            });
+          }
+
+          // Fonction pour générer la facture
+          function generateInvoice() {
+            var invoice = {
+              numero: "F001",
+              entreprise: document.getElementById("clientSelect").value,
+              date: new Date().toLocaleDateString()
+            };
+
+            // Ajout de la facture à la liste des factures précédentes
+            var row = "<tr>";
+            row += "<td>" + invoice.numero + "</td>";
+            row += "<td>" + invoice.entreprise + "</td>";
+            row += "<td>" + invoice.date + "</td>";
+            row += "<td><button class='btn show-btn'>Afficher</button> <button class='btn delete-btn'>Supprimer</button></td>";
+            row += "</tr>";
+
+            document.getElementById("invoiceList").innerHTML += row;
+
+            // Masquer la page d'interface de génération de facture
+            document.getElementById("invoicePage").classList.remove("show");
+          }
+
+          // Écouteur d'événement pour le bouton "Générer une facture"
+          document.getElementById("generateInvoiceBtn").addEventListener("click", showInvoicePage);
+
+          // Écouteur d'événement pour le bouton "Générer la facture"
+          document.getElementById("generateBtn").addEventListener("click", generateInvoice);
+
+          // Écouteur d'événement pour le bouton "Supprimer"
+          document.getElementById("invoiceList").addEventListener("click", function (event) {
+            if (event.target.classList.contains("delete-btn")) {
+              event.target.closest("tr").remove();
+            }
+          });
+        </script>
+
+      </body>
+
+      </html>
+    </div>
+    <div class="content" id="reports">
+      <h2>Rapports</h2>
+      <button>Statistiques</button>
+      <button>Performance</button>
+      <p>Ceci est l'interface des rapports. Elle fournit des rapports détaillés et des analyses.</p>
+      <!DOCTYPE html>
+      <html lang="fr">
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Graphique d'activité par client</title>
+        <!-- Inclure Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      </head>
+
+      <body>
+        <div style="width: 80%; margin: auto;">
+          <canvas id="myChart"></canvas>
+        </div>
+
+        <script>
+          // Données de l'exemple
+          var clients = ["Client A", "Client B", "Client C", "Client D"];
+          var activites = [50, 30, 20, 40]; // Exemple de données d'activité par client
+
+          // Créer un contexte de dessin pour le graphique
+          var ctx = document.getElementById('myChart').getContext('2d');
+
+          // Créer le graphique
+          var myChart = new Chart(ctx, {
+            type: 'bar', // Type de graphique (barre)
+            data: {
+              labels: clients, // Noms des clients
+              datasets: [{
+                label: 'Activité par client', // Légende du graphique
+                data: activites, // Données d'activité
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)', // Couleur de fond pour chaque barre
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(255, 206, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)'
+                ],
+                borderColor: [
+                  'rgba(255, 99, 132, 1)', // Couleur de bordure pour chaque barre
+                  'rgba(54, 162, 235, 1)',
+                  'rgba(255, 206, 86, 1)',
+                  'rgba(75, 192, 192, 1)'
+                ],
+                borderWidth: 1 // Largeur de la bordure
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true // Commencer l'axe y à zéro
+                  }
+                }]
+              }
+            }
+          });
+        </script>
+      </body>
+
+      </html>
+    </div>
+    <div class="content" id="activities">
+      <h2>Activité</h2>
+      <button>Générer un devis</button>
+      <button>Importer une tarification </button>
+      <p>Ici, créer vos propres offres ou stockez vos tarification pour une classification détaillée de vos offres</p>
+      <!DOCTYPE html>
+      <html lang="fr">
+
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Historique client</title>
+        
+      </head>
+
+      <body>
+
+        <h2>Historique client</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Entreprise</th>
+              <th>Nom du responsable</th>
+              <th>Contact mail</th>
+              <th>Téléphone</th>
+              <th>Offres en cours</th>
+              <th>Offres passées</th>
+              <th> </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Entreprise A</td>
+              <td>Responsable A</td>
+              <td>contact@entrepriseA.com</td>
+              <td>1234567890</td>
+              <td>3</td>
+              <td>7</td>
+              <td><button>Voir</button></td>
+            </tr>
+            <tr>
+              <td>Entreprise B</td>
+              <td>Responsable B</td>
+              <td>contact@entrepriseB.com</td>
+              <td>9876543210</td>
+              <td>5</td>
+              <td>12</td>
+              <td><button>Voir</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </body>
+
+      </html>
+    </div>
+  </div>
+  <script>
+    const menuLinks = document.querySelectorAll('.menu a');
+    const contents = document.querySelectorAll('.content');
+
+    menuLinks.forEach((link, index) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        showContent(index);
+      });
+    });
+
+    function showContent(index) {
+      contents.forEach(content => {
+        content.classList.remove('active');
+      });
+      contents[index].classList.add('active');
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page d'accueil</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+      <h1>ACCEUIL</h1>
+  </header>
+  <nav>
+      <ul>
+        <img src="Images/Pages/Client.png" width="250">
+        <li><a href="Clients.html">Page clients</a></li>
+        <img src="Images/Pages/Facture.png" width="250">
+          <li><a href="Factures.html">Factures</a></li>
+          <img src="Images/Pages/Rapport.png" width="250">
+          <li><a href="Rapports.html">Rapports</a></li>
+          <img src="Images/Pages/Activité.png" width="250">
+          <li><a href="Activités.html">Activités</a></li>
+          <!-- Ajoutez plus de liens selon vos besoins -->
+      </ul>
+  </nav>

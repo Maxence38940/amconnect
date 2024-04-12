@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <link rel="stylesheet" href="Style 3.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AM Connect CRM/Factures</title>
+  <link rel="icon" href="Images/Logo/Logo 1.png" type="image/x-icon">
+</head>
+
+<body>
+  <header class="header">
+      <a class="Logo" href="Acceuil.html"><img src="Images/Logo/Logo 1.png" alt="Logo de l'interface" width="150"></a>
+      <style>
+        .Logo{
+          position: absolute; /* ou relative selon vos besoins */
+          top: 15px; /* position verticale par rapport au haut */
+          left: 15px; /* position horizontale par rapport à la gauche */
+        }
+      </style>
+      <div class="buttons">
+        <a href="Page de connexion.html"><button>SE CONNECTER</button></a>
+        <a href="Page de connexion.html"><button>S'INSCRIRE</button></a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./Clients.html">Clients</a></li>
+          <li><a href="./Factures.html">Facture</a></li>
+          <li><a href="./Rapports.html">Rapports</a></li>
+          <li><a href="./Activités.html">Activité</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <section class="content">
+    <div class="container">
+      <img src="https://www.trans-natural.com/wp-content/uploads/sites/274/2020/01/2020-logo-vague_transnatural-orig.png" alt="Logo TransNatural" width="300">
+    </div>
+  </section>
+
+<body>
+  
+    <div class="content" id="invoices">
+      <h2>Factures</h2>
+      <p>Gérez vos factures par le biai des interfaces ci-dessous</p>
+      <!DOCTYPE html>
+      <html lang="fr">
+
+      <div class="container">
+        <h2>Générateur de factures</h2>
+        <button class="btn" id="generateInvoiceBtn">Générer une facture</button>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Tableau en nuances de gris</title>
+            <style>
+                table {
+                    border-collapse: collapse;
+                    width: 100%;
+                    border: 2px solid #616060; /* Couleur du contour du tableau */
+                }
+                th, td {
+                    border: 0px solid #ffffff;
+                    padding: 8px;
+                    text-align: left;
+                }
+                th {
+                    background-color: #616060;
+                    color: #fff;
+                }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2; /* Utilisation d'une nuance de gris clair pour les lignes paires */
+                }
+                tr:nth-child(odd) {
+                    background-color: #e0e0e0; /* Utilisation d'une nuance de gris plus foncé pour les lignes impaires */
+                }
+                .marge {
+                    margin-bottom: 5%;
+                }
+                .page {
+                    display: none; /* Caché par défaut */
+                }
+                .show {
+                    display: block; /* Afficher lorsque la classe show est ajoutée */
+                }
+            </style>
+        </head>
+    
+        <!-- Liste des factures précédentes -->
+        <h3>Liste des factures précédentes</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Numéro de facture</th>
+                    <th>Nom de l'entreprise</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceList">
+                <!-- Les factures précédentes seront ajoutées ici dynamiquement -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Page d'interface pour générer une facture -->
+    <div id="invoicePage" class="page">
+        <div class="container">
+            <h2>Générer une facture</h2>
+            <div>
+                <!-- Formulaire pour saisir les détails de l'affaire -->
+                <h3>Détails de l'affaire</h3>
+                <input type="text" placeholder="Nom de l'affaire"><br><br>
+                <!-- Bloc pour choisir un client préenregistré -->
+                <h3>Choisir un client</h3>
+                <select id="clientSelect">
+                    <!-- Les options seront ajoutées ici dynamiquement -->
+                </select><br><br>
+                <button class="btn" id="generateBtn">Générer la facture</button>
+                <button class="btn" id="cancelBtn">Annuler</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Fonction pour afficher la page d'interface de génération de facture
+        function showInvoicePage() {
+            document.getElementById("invoicePage").classList.add("show");
+            populateClientDropdown(); // Remplir la liste déroulante des clients
+        }
+    
+        // Fonction pour remplir la liste déroulante des clients
+        function populateClientDropdown() {
+            var clients = ["Desjoyaux Piscines", "Sofatec", "All Solution", "Pradier bois Energie"]; // Exemple de clients
+            var select = document.getElementById("clientSelect");
+    
+            clients.forEach(function (client) {
+                var option = document.createElement("option");
+                option.text = client;
+                select.add(option);
+            });
+        }
+    
+        // Fonction pour générer la facture
+        function generateInvoice() {
+            var invoice = {
+                numero: "F001",
+                entreprise: document.getElementById("clientSelect").value,
+                date: new Date().toLocaleDateString()
+            };
+            
+    
+            // Ajout de la facture à la liste des factures précédentes
+            var row = "<tr>";
+            row += "<td>" + invoice.numero + "</td>";
+            row += "<td>" + invoice.entreprise + "</td>";
+            row += "<td>" + invoice.date + "</td>";
+            row += "<td><button class='btn show-btn'>Afficher</button> <button class='btn delete-btn'>Supprimer</button></td>";
+            row += "</tr>";
+    
+            document.getElementById("invoiceList").innerHTML += row;
+    
+            // Masquer la page d'interface de génération de facture
+            document.getElementById("invoicePage").classList.remove("show");
+        }
+    
+        // Écouteur d'événement pour le bouton "Générer une facture"
+        document.getElementById("generateInvoiceBtn").addEventListener("click", showInvoicePage);
+    
+        // Écouteur d'événement pour le bouton "Générer la facture"
+        document.getElementById("generateBtn").addEventListener("click", generateInvoice);
+    
+        // Écouteur d'événement pour le bouton "Supprimer"
+        document.getElementById("invoiceList").addEventListener("click", function (event) {
+            if (event.target.classList.contains("delete-btn")) {
+                event.target.closest("tr").remove();
+            }
+        });
+    </script>
+ 
+<footer class="footer">
+  <div class="containerfooter">
+    <p>&copy; AM Connect 2024</p>
+    <a href="#">Conditions Générales d'Utilisation</a>
+  </div>
+</footer>
+</body>
+      </body>
+
+      </html>
+    
